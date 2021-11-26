@@ -680,8 +680,22 @@ export async function deletePostById(sectionId, categoryId, threadId, postId){
  * @returns {Object} basic database object
  */
 function initDatabase() {
+    let newsSectionId = generateRandomId()
+    let newsCategoryId = generateRandomId()
     let database = {
         "sections": {
+            [newsSectionId]: {
+                "id": newsSectionId,
+                "title": "News",
+                "categories": {
+                    [newsCategoryId]: {
+                        "id": newsCategoryId,
+                        "title": "News category",
+                        "threads": {
+                        }
+                    }
+                }
+            }
         }
     }
     saveDatabase(database)
