@@ -1,0 +1,27 @@
+.thread-container {
+    margin-top: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 2px;
+    background-color: #dcdde1;
+    border: 0.002px solid rgb(92, 102, 116);
+    border-radius: 2px;
+}
+
+.thread {
+    margin-bottom: 10px;
+    padding: 1em;
+    border: 2px solid #338adb;
+    background-color: #487eb0;
+}
+
+.thread a {
+    text-decoration: none;
+    color: lightgray;
+}
+
+.no-threads-label {
+    text-align: center;
+    font-size: large;
+}
