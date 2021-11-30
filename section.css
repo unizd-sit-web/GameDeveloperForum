@@ -1,4 +1,4 @@
-.section-title #new-thread-btn{
+.section-title .btn-right{
     float: right;
     transform: translateY(-100%);
 }
