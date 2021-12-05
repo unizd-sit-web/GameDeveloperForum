@@ -3,6 +3,8 @@ import { createThreadCard } from "./util.js"
 
 // load navbar template
 $("#navbar-placeholder").load("navbar.html");
+// load footer template
+$("#footer-placeholder").load("footer.html");
 
 // constants
 const threadContainer = $("#thread-container")
