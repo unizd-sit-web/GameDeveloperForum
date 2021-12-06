@@ -20,7 +20,7 @@ async function fetchThreads(){
     }
     for (let id of ids){
         let thread = await getThreadByIdFiltered(sectionId, categoryId, id, ["title"]).catch(console.error);
-        let queryString = `?section_id=${sectionId}&category_id=${categoryId}&thread_id=${id}`;
+        let queryString = `section_id=${sectionId}&category_id=${categoryId}&thread_id=${id}`;
         let card = createThreadCard(thread["title"], "./thread.html?" + queryString);
         threadContainer.append(card);
     }
