@@ -682,6 +682,8 @@ export async function deletePostById(sectionId, categoryId, threadId, postId){
 function initDatabase() {
     let newsSectionId = generateRandomId()
     let newsCategoryId = generateRandomId()
+    let forumSectionId = generateRandomId()
+    let unityCategoryId = generateRandomId()
     let database = {
         "sections": {
             [newsSectionId]: {
@@ -691,6 +693,18 @@ function initDatabase() {
                     [newsCategoryId]: {
                         "id": newsCategoryId,
                         "title": "News category",
+                        "threads": {
+                        }
+                    }
+                }
+            },
+            [forumSectionId]: {
+                "id": forumSectionId,
+                "title": "Forum",
+                "categories": {
+                    [unityCategoryId]: {
+                        "id": unityCategoryId,
+                        "title": "Unity",
                         "threads": {
                         }
                     }
