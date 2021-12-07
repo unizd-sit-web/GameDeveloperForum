@@ -9,10 +9,11 @@
  * @returns Card as a DOM element
  */
 export function createThreadCard(title, redirUrl){
-    let threadDiv = $("<div>")
-    threadDiv.addClass("thread")
-    threadDiv.append(`<h2><a href="${redirUrl}">${title}</a></h2>`)
-    return threadDiv
+    let a = $("<a>")
+    a.attr("href", redirUrl)
+    a.addClass("list-group-item list-group-item-action p-3")
+    a.text(title)
+    return a
 }
 
 /**
@@ -33,4 +34,30 @@ export function createPostCard(content, author, createDate, editDate){
     card.append(cardBody)
 
     return card
+}
+
+export function createTitledCard(title, createdDate, redirUrl){
+    var card = document.createElement("a");
+    card.className = "list-group-item list-group-item-action flex-column align-items-start";
+    card.href = redirUrl;
+    var cardHeader = document.createElement("div");
+    cardHeader.className = "d-flex w-100 justify-content-between";
+    var cardTitle = document.createElement("h5");
+    cardTitle.className = "mb-1";
+    cardTitle.innerHTML = title;
+    var cardDate = document.createElement("small");
+    cardDate.className = "text-muted";
+    cardDate.innerHTML = createdDate;
+    cardHeader.appendChild(cardTitle);
+    cardHeader.appendChild(cardDate);
+    card.appendChild(cardHeader);
+    var cardBody = document.createElement("p");
+    cardBody.className = "mb-1";
+    cardBody.innerHTML = "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.";
+    card.appendChild(cardBody);
+    var cardFooter = document.createElement("small");
+    cardFooter.className = "text-muted";
+    cardFooter.innerHTML = "Donec id elit non mi porta.";
+    card.appendChild(cardFooter);
+    return card;
 }
