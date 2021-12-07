@@ -3,6 +3,8 @@ import {createPostCard} from "./util.js"
 
 // load navbar template
 $("#navbar-placeholder").load("navbar.html")
+// load footer template
+$("#footer-placeholder").load("footer.html")
 
 const searchParams = new URLSearchParams(window.location.search)
 const sectionId = searchParams.get("section_id")
