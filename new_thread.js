@@ -2,6 +2,8 @@ import {createThread, createPost} from "./storage.js"
 
 // load navbar template
 $("#navbar-placeholder").load("navbar.html");
+// load footer template
+$("#footer-placeholder").load("footer.html");
 
 // constants
 const titleField = $("#title-field");
