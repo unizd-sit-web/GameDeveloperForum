@@ -1,4 +1,4 @@
-import {getThreadsIds, getThreadByIdFiltered} from "./storage.js"
+import {getThreadsIds, getThreadByIdFiltered, getCategoryByIdFiltered} from "./storage.js"
 import {createThreadCard} from "./util.js"
 
 // load navbar template
@@ -12,6 +12,12 @@ const sectionId = searchParams.get("section_id");
 const categoryId = searchParams.get("category_id");
 const noThreadsLabel = $("#no-threads-label");
 const threadContainer = $("#thread-container");
+const categoryTitle = $("#category-title");
+
+async function fetchTitle(){
+    let category = await getCategoryByIdFiltered(sectionId, categoryId, ["title"]).catch(console.error);
+    categoryTitle.text(category["title"]);
+}
 
 async function fetchThreads(){
     let ids = await getThreadsIds(sectionId, categoryId, 10).catch(console.error);
@@ -26,6 +32,7 @@ async function fetchThreads(){
     }
 }
 
+fetchTitle().catch(console.error);
 fetchThreads().catch(console.error);
 $("#new-thread-btn").click(() => {
     var searchParams = new URLSearchParams(window.location.search)
